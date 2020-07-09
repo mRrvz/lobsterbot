@@ -9,19 +9,7 @@ def choose_random_phrase():
         return data[randint(0, len(data) - 1)][:-1]
 
 
-def create_shadows(draw, x, y, text, font, shadow_color=cfg.BLACK, offset=2):
-    draw.text((x - offset, y), text, shadow_color, font)
-    draw.text((x + offset, y), text, shadow_color, font)
-    draw.text((x, y - offset), text, shadow_color, font)
-    draw.text((x, y + offset), text, shadow_color, font)
-
-    draw.text((x - offset, y - offset), text, shadow_color, font)
-    draw.text((x + offset, y - offset), text, shadow_color, font)
-    draw.text((x - offset, y + offset), text, shadow_color, font)
-    draw.text((x + offset, y + offset), text, shadow_color, font)
-
-
-def apply_text(img_name, text):
+def apply_text(img_name, text, shadows_offset=3):
     with Image.open(img_name) as img:
         draw = ImageDraw.Draw(img)
         font_size = int(img.width * cfg.FONT_FACTOR)
@@ -31,7 +19,7 @@ def apply_text(img_name, text):
         x = (img.width - w) // 2
         y = img.height - h - int(img.height * cfg.TEXT_YOFFSET)
 
-        create_shadows(draw, x, y, text, font)
+        draw.text((x + shadows_offset, y + shadows_offset), text, cfg.BLACK, font=font)
         draw.text((x, y), text, cfg.WHITE, font=font)
 
         img.save(img_name)
