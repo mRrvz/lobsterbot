@@ -5,7 +5,7 @@ TOKEN = os.environ['TOKEN']
 PHRASES_PATH = "../data/sentences.txt"
 
 FONT_PATH = "lobster.ttf"
-FONT_FACTOR = 0.08
+FONT_FACTOR = 0.04
 MIN_FONT_BORDER = 7
 
 TEXT_YOFFSET = 0.03
