@@ -2,9 +2,9 @@ import os
 
 TOKEN = os.environ['TOKEN']
 
-PHRASES_PATH = "../data/sentences.txt"
+PHRASES_PATH = "data/sentences.txt"
 
-FONT_PATH = "lobster.ttf"
+FONT_PATH = "data/lobster.ttf"
 FONT_FACTOR = 0.04
 MIN_FONT_BORDER = 7
 

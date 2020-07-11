@@ -3,8 +3,8 @@ import time
 import telebot
 from tempfile import gettempdir
 
-import config as cfg
-import text_managment as tm
+import bot.config as cfg
+import bot.text_managment as tm
 
 bot = telebot.TeleBot(cfg.TOKEN)
 
