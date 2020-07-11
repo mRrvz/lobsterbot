@@ -46,4 +46,9 @@ def echo_message(message):
     os.remove(gettempdir() + "/" + raw + ".jpg")
     
 
-bot.polling()
+if __name__ == "__main__":
+    while True:
+        try:
+            bot.polling(none_stop=True)
+        except Exception:
+            time.sleep(25)
