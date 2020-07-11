@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  bot: 
+    image: alexeymrvz/lobsterbot
+    container_name: "lobsterbot"
+    command: sh -c "cd bot && python3 bot.py"
+    env_file:
+      - ./creds/credentials.env
