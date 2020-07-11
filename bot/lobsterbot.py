@@ -20,7 +20,8 @@ def help_handler(message):
 
 @bot.message_handler(func=lambda message: True)
 def messages_handler(message):
-    bot.send_message(message.chat.id, cfg.TEXT_MESSAGE)
+    if message.json['chat']['type'] != 'group':
+        bot.send_message(message.chat.id, cfg.TEXT_MESSAGE)
 
 
 @bot.message_handler(func=lambda message: True, content_types=['photo'])
