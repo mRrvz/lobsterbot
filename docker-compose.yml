@@ -4,7 +4,7 @@ services:
   bot: 
     image: alexeymrvz/lobsterbot
     container_name: "lobsterbot"
-    command: sh -c "PYTHONPATH='.' python3 bot/bot.py"
+    command: sh -c "PYTHONPATH='.' python3 bot/lobsterbot.py"
     env_file:
       - ./creds/credentials.env
     volumes:
